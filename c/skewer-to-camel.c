@@ -49,7 +49,9 @@ void skewer_to_camel_inplace(char* text) {
 
     while (text[i] != '\0') {
         if (text[i] == '-') {
-            i++;
+            do {
+                i++;
+            } while (text[i] == '-');
             text[j] = toupper(text[i]);
         } else {
             text[j] = text[i];
